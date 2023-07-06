@@ -7,11 +7,6 @@ namespace App\SharedKernel\Domain\ValueObjects;
  */
 final class GUID extends BaseValueObject
 {
-    public static function next(): GUID
-    {
-        return new GUID(uniqid());
-    }
-
     protected function validate($value)
     {
         $value = trim($value);
