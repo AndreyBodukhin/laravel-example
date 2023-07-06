@@ -2,7 +2,8 @@
 
 namespace App\User\Domain\ValueObjects;
 
-class UserPassword
-{
+use App\SharedKernel\Domain\ValueObjects\BaseValueObject;
 
+class UserPassword extends BaseValueObject
+{
 }
