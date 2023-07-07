@@ -8,6 +8,24 @@ abstract class AggregateRootWithEvents implements AggregateRoot
 {
     private array $records = [];
 
+    public static function wakeUp($events): AggregateRootWithEvents
+    {
+        $entity = (new static())
+            ->apply(...$events);
+        static::popEvents($entity);
+        return $entity;
+    }
+
+    /**
+     * @return AggregateRootEvent[]
+     */
+    public static function popEvents(AggregateRootWithEvents $entity): array
+    {
+        $records = $entity->records;
+        $entity->records = [];
+        return $records;
+    }
+
     protected function apply(AggregateRootEvent ...$events): static
     {
         foreach ($events as $event) {
