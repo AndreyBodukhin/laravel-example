@@ -47,7 +47,8 @@ final class UserEmail implements ValueObject
             return false;
         }
 
-        return $this->isVerified && $another-> $this->email->equalsTo($another);
+        /** @var UserEmail $another */
+        return $this->isVerified === $another->isVerified && $this->email->equalsTo($another->getEmail());
     }
 
     public function __toString(): string
