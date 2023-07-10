@@ -9,8 +9,7 @@ use App\User\Domain\Entity\User;
 use App\User\Domain\Repositories\Exceptions\UserNotFoundException;
 use App\User\Domain\Repositories\UserRepository as UserRepositoryInterface;
 
-//TODO: Rename
-final class UserRepository implements UserRepositoryInterface
+final class EventSourcingUserRepository implements UserRepositoryInterface
 {
     private EventSourcingRepository $repository;
     public function __construct(EventStore $eventStore)
