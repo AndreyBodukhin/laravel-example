@@ -26,7 +26,7 @@
   - [ ] Anti-Corruption
 - Event sourcing
   - [x] Domain events
-  - [ ] Event store
+  - [x] Event store
   - [ ] Event bus
 - CQRS
   - [x] Commands
